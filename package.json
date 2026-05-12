@@ -1,0 +1,43 @@
+{
+  "name": "@atbash/autogen",
+  "version": "0.2.0",
+  "description": "Atbash safety judge plugin for AutoGen-style multi-agent orchestration",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "atbash",
+    "autogen",
+    "ai-safety",
+    "agent-safety",
+    "multi-agent",
+    "judge",
+    "policy"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:integration": "node examples/autogen-runtime-agent/run.mjs"
+  },
+  "dependencies": {
+    "@atbash/sdk": "^0.3.8"
+  },
+  "devDependencies": {
+    "@types/node": "^25.7.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^4.1.6"
+  }
+}
